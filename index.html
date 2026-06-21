@@ -1,0 +1,448 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Hritik ❤️</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+font-family:'Poppins',sans-serif;
+height:100vh;
+overflow:hidden;
+background:linear-gradient(135deg,#0f172a,#4c1d95,#7c3aed);
+display:flex;
+justify-content:center;
+align-items:center;
+color:white;
+}
+
+.container{
+width:100%;
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+position:relative;
+padding:20px;
+text-align:center;
+}
+
+.hidden{
+display:none !important;
+}
+
+/* Floating particles */
+.particle{
+position:absolute;
+width:4px;
+height:4px;
+background:white;
+border-radius:50%;
+opacity:.5;
+animation:float 8s infinite linear;
+}
+
+@keyframes float{
+0%{transform:translateY(100vh);}
+100%{transform:translateY(-100vh);}
+}
+
+/* Envelope */
+.envelope-wrapper{
+display:flex;
+flex-direction:column;
+align-items:center;
+gap:20px;
+}
+
+.envelope{
+position:relative;
+width:280px;
+height:190px;
+background:#f6d365;
+border-radius:10px;
+box-shadow:0 0 40px rgba(255,215,0,.4);
+overflow:hidden;
+}
+
+.flap{
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:#ffd700;
+clip-path:polygon(0 0,50% 55%,100% 0);
+transform-origin:top;
+transition:1.5s;
+}
+
+.envelope.open .flap{
+transform:rotateX(180deg);
+}
+
+.knot{
+position:absolute;
+top:70px;
+left:50%;
+transform:translateX(-50%);
+font-size:35px;
+cursor:pointer;
+user-select:none;
+transition:.3s;
+}
+
+.knot:hover{
+transform:translateX(-50%) scale(1.15);
+}
+
+.blink{
+animation:blink 1s infinite;
+font-weight:600;
+}
+
+@keyframes blink{
+50%{
+opacity:.3;
+}
+}
+
+/* Message cards */
+.card{
+max-width:900px;
+background:rgba(255,255,255,.08);
+backdrop-filter:blur(12px);
+padding:35px;
+border-radius:25px;
+box-shadow:0 0 40px rgba(255,255,255,.1);
+animation:fadeIn 1.5s;
+}
+
+@keyframes fadeIn{
+from{
+opacity:0;
+transform:translateY(40px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+.title{
+font-size:3rem;
+font-weight:700;
+color:#FFD700;
+margin-bottom:20px;
+text-shadow:0 0 20px gold;
+}
+
+.letter{
+font-size:1.2rem;
+line-height:1.9;
+white-space:pre-line;
+}
+
+.friend{
+font-family:'Dancing Script',cursive;
+font-size:2rem;
+color:#ffd700;
+}
+
+.final{
+font-size:4rem;
+font-weight:700;
+color:#FFD700;
+animation:pulse 1.5s infinite;
+}
+
+@keyframes pulse{
+50%{
+transform:scale(1.08);
+}
+}
+
+.small{
+margin-top:20px;
+font-size:1.3rem;
+}
+
+/* Hearts */
+.heart{
+position:absolute;
+font-size:25px;
+animation:rise 6s linear infinite;
+opacity:.8;
+}
+
+@keyframes rise{
+0%{
+transform:translateY(100vh);
+opacity:0;
+}
+20%{
+opacity:1;
+}
+100%{
+transform:translateY(-120vh);
+opacity:0;
+}
+}
+
+@media(max-width:768px){
+
+.title{
+font-size:2rem;
+}
+
+.final{
+font-size:2.5rem;
+}
+
+.letter{
+font-size:1rem;
+}
+
+.envelope{
+width:240px;
+height:160px;
+}
+
+}
+</style>
+</head>
+
+<body>
+
+<div id="particles"></div>
+
+<!-- Envelope Screen -->
+<div class="container" id="screen1">
+<div class="envelope-wrapper">
+
+<div class="envelope" id="envelope">
+<div class="flap"></div>
+<div class="knot" id="knot">🎀</div>
+</div>
+
+<h3 class="blink">
+💌 A Special Message Is Waiting...
+<br><br>
+Tap multiple times on the knot to open it!
+</h3>
+
+<p id="counter">Taps: 0 / 15</p>
+
+</div>
+</div>
+
+<!-- Birthday Screen -->
+<div class="container hidden" id="screen2">
+<div class="card">
+<div class="title">
+🎉 HAPPY BIRTHDAY<br>
+HRITHIK BRO! 🎂❤️
+</div>
+</div>
+</div>
+
+<!-- Letter Screen -->
+<div class="container hidden" id="screen3">
+<div class="card">
+
+<div class="friend">
+Happy Birthday Hritik 🎂❤️
+</div>
+
+<div class="letter">
+
+From those school days to our college journey,
+we have come a long way together.
+
+We have shared countless memories,
+laughs, struggles, and moments
+that I will always cherish.
+
+A lot of people come and go in life,
+but a true friend who stays from school days till now is special.
+
+I’m really grateful to have a friend like you, Hritik. 🤝
+
+May this new year of your life bring success,
+happiness, good health, and the courage
+to achieve all your dreams.
+
+Keep being the same genuine person you are.
+
+No matter how much life changes,
+I hope our friendship stays the same forever. ✨
+
+Happy Birthday once again, brother! 🎉🥳
+
+— Harsh ❤️
+
+</div>
+
+</div>
+</div>
+
+<!-- Friendship Timeline -->
+<div class="container hidden" id="screen4">
+<div class="card">
+<div class="title">
+🏫 School Friends
+<br>
+⬇
+<br>
+🎓 College Friends
+<br>
+⬇
+<br>
+❤️ Brothers Forever ❤️
+</div>
+</div>
+</div>
+
+<!-- Final Screen -->
+<div class="container hidden" id="screen5">
+<div class="card">
+<div class="final">
+❤️ THANK YOU ❤️
+</div>
+
+<div class="small">
+For Being Such An Amazing Friend
+<br><br>
+Happy Birthday Once Again,
+Hrithik Bro 🎂🎉
+<br><br>
+— Harsh ❤️
+</div>
+</div>
+</div>
+
+<script>
+
+let taps=0;
+const requiredTaps=15;
+
+const knot=document.getElementById("knot");
+const counter=document.getElementById("counter");
+const envelope=document.getElementById("envelope");
+
+for(let i=0;i<60;i++){
+let p=document.createElement("div");
+p.className="particle";
+p.style.left=Math.random()*100+"vw";
+p.style.animationDuration=(5+Math.random()*8)+"s";
+document.body.appendChild(p);
+}
+
+function createHeart(){
+
+let heart=document.createElement("div");
+
+heart.className="heart";
+heart.innerHTML=["❤️","✨","💖","🎉"][Math.floor(Math.random()*4)];
+
+heart.style.left=Math.random()*100+"vw";
+
+document.body.appendChild(heart);
+
+setTimeout(()=>{
+heart.remove();
+},6000);
+
+}
+
+setInterval(createHeart,800);
+
+knot.addEventListener("click",()=>{
+
+taps++;
+
+counter.innerHTML=`Taps: ${taps} / ${requiredTaps}`;
+
+knot.style.transform=
+`translateX(-50%) rotate(${taps*15}deg)`;
+
+if(taps>=requiredTaps){
+
+envelope.classList.add("open");
+
+setTimeout(()=>{
+showBirthday();
+},1800);
+
+}
+
+});
+
+function hideAll(){
+document.querySelectorAll(".container")
+.forEach(el=>el.classList.add("hidden"));
+}
+
+function showBirthday(){
+
+hideAll();
+
+document.getElementById("screen2")
+.classList.remove("hidden");
+
+setTimeout(()=>{
+showLetter();
+},6000);
+
+}
+
+function showLetter(){
+
+hideAll();
+
+document.getElementById("screen3")
+.classList.remove("hidden");
+
+setTimeout(()=>{
+showTimeline();
+},30000);
+
+}
+
+function showTimeline(){
+
+hideAll();
+
+document.getElementById("screen4")
+.classList.remove("hidden");
+
+setTimeout(()=>{
+showFinal();
+},5000);
+
+}
+
+function showFinal(){
+
+hideAll();
+
+document.getElementById("screen5")
+.classList.remove("hidden");
+
+}
+
+</script>
+
+</body>
+</html>
+```
